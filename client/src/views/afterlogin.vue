@@ -25,8 +25,9 @@
                 </div>
 
                 <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
+                  Through a short survey, conversation and a movement assessment, 
+                  our team will prescribe the perfect program to get you started and
+                   on track to meet your fitness goals.
                   <a>@bulmaio</a>.
                   <a href="#">#css</a>
                   <a href="#">#responsive</a>
@@ -50,8 +51,9 @@
                 </div>
 
                 <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
+                  Full-body workouts designed to build strength and endurance,
+                   using the energy of the group and the expertise of the certified 
+                   personal trainer to maximize your results.
                   <a>@bulmaio</a>.
                   <a href="#">#css</a>
                   <a href="#">#responsive</a>
@@ -75,8 +77,7 @@
                 </div>
 
                 <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
+                  One-on-one personalized workouts with a certified personal trainer designed to make you stronger from the inside out.
                   <a>@bulmaio</a>.
                   <a href="#">#css</a>
                   <a href="#">#responsive</a>
