@@ -35,8 +35,9 @@
               </div>
 
               <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
+                Your expert coach will take you through an assessment in order to 
+                create your personal plan for success. Whether you're a beginner or
+                 an experienced athlete, we have a coach for you. 
                 <a>@bulmaio</a>.
                 <a href="#">#css</a>
                 <a href="#">#responsive</a>
@@ -64,8 +65,9 @@
               </div>
 
               <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
+               You'll get a personalized nutrition plan built specifically for your needs. 
+               No more guesswork, no more stress. You'll learn how to eat on your own terms
+                while establishing healthy habits.
                 <a>@bulmaio</a>.
                 <a href="#">#css</a>
                 <a href="#">#responsive</a>
@@ -96,8 +98,8 @@
               </div>
 
               <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
+                We build the workouts for you, you follow them and get results.
+                 The Fitocracy mobile app will take you through each expert-built workout, set by set.
                 <a>@bulmaio</a>.
                 <a href="#">#css</a>
                 <a href="#">#responsive</a>
@@ -126,8 +128,9 @@
               </div>
 
               <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
+                We are providind an opportunity of sharing an exercise with your
+                 friends to make challenge with your friends. So it will help you to make 
+                 fit your friend and increase concentration on your body fitness.
                 <a>@bulmaio</a>.
                 <a href="#">#css</a>
                 <a href="#">#responsive</a>
