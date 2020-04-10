@@ -7,7 +7,7 @@
         
         <h1 class="title is-1 text-center text-light" >How Does 24/7 Fitness Help Me?</h1>
         
-        <p class=" text-center  is-1 text-light px-4">Let Fitocracy help you conquer this year. Track workouts, build support, challenge yourself and your friends, all with the help of our expert coaches.</p>
+        <p class=" text-center  is-1 text-light px-4">Let 24/7 Fitness help you conquer this year. Track workouts, build support, challenge yourself and your friends, all with the help of our expert coaches.</p>
       
          <button class="button pointer is-medium is-primary mt-2" @click="$router.push({path:'/signup'})"><strong >Join Today</strong></button>
         
