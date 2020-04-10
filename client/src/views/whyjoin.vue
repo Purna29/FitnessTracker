@@ -34,8 +34,8 @@
               </div>
 
               <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
+                Every member gets a free, personalized Get Started Plan when they join. Our friendly,
+                 professional staff is trained to help you along your fitness journey, no matter how much support you need.
             
                 <br />
               </div>
@@ -61,8 +61,9 @@
               </div>
 
               <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
+                ogether – we can make healthy happen. That’s why we offer personal
+                 training and classes when you’re here, and the right tools to keep
+                  you on track when you’re not.
               
                 <br />
             
@@ -91,8 +92,7 @@
               </div>
 
               <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
+                With 24/7 access you can be fit when ever you want. You’re joining the most convenient gym on the planet.
        
                 <br />
                
@@ -119,8 +119,8 @@
               </div>
 
               <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
+                You’re not just joining a gym. You’re joining a supportive
+                 community of like-minded people who are here to give you the encouragement you need.
                
                 <br />
              
