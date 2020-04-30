@@ -1,7 +1,7 @@
 /* B"H
 */
 const Users = [
-    { Name: 'poorna', Password: 'poorna', Email: 'poorna@newpaltz.edu' },
+    { Name: 'poorna', Password: '8030', Email: 'poorna@newpaltz.edu' },
     { Name: 'Bracha', Password: '5780', Email: 'chabad@newpaltz.edu' },
     
 ];

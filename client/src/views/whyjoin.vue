@@ -61,7 +61,7 @@
               </div>
 
               <div class="content">
-                ogether – we can make healthy happen. That’s why we offer personal
+                Together – we can make healthy happen. That’s why we offer personal
                  training and classes when you’re here, and the right tools to keep
                   you on track when you’re not.
               

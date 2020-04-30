@@ -8,6 +8,9 @@ import Signup from '../views/signup.vue';
 import Contact from '../views/contact.vue';
 import Whyjoin from '../views/whyjoin.vue';
 import Afterlogin from '../views/afterlogin.vue';
+import Profile from '../views/profile.vue';
+import Food from '../views/Fooddiet.vue';
+import Fitness from '../views/fitness.vue';
 import { CurrentUser } from '../models/Users';
 
 Vue.use(VueRouter)
@@ -16,8 +19,11 @@ const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/game', name: 'Game', component: Game, meta: { isSecret: true } },
   { path: '/login', name: 'Login', component: Login },
+  { path: '/fitness', name: 'Fitness', component: Fitness },
   { path: '/signup', name: 'Signup', component: Signup },
   { path: '/contact', name: 'Contact', component: Contact },
+  { path: '/diet', name: 'Diet', component: Food },
+  { path: '/profile', name: 'Profile', component: Profile },
   { path: '/whyjoin', name: 'Whyjoin', component: Whyjoin },
   { path: '/home', name: 'afterlogin', component: Afterlogin },
 
@@ -39,9 +45,14 @@ const router = new VueRouter({
 });
 
 router.beforeEach( (to, from, next) => {
-  if( to.meta.isSecret && !CurrentUser) next('/login');
-  else next();
-});
+  if (to.path === '/login' || from.path === '/login' || to.path === '/whyjoin' || to.path === '/contact' || to.path === '/') { next() }
+  else if (!localStorage.getItem("user")) {
+    next({ 'path': '/login' })
+}
+
+
+next()
+})
 
 
 export default router

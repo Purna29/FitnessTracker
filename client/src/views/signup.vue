@@ -45,7 +45,7 @@
               </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" v-model="name" placeholder="Name">
+                    <input type="text" class="form-control form-control-user" id="exampleFirstName" v-model="name" placeholder="FirstName">
                   </div>
                   <div class="col-sm-6">
                     <input type="text" class="form-control form-control-user" id="exampleLastName" v-model="surname" placeholder="Surname">
@@ -172,7 +172,7 @@ import Vue from "vue";
     return {
       errors: [],
       config: "",
-      name: "",
+      firstname: "",
       surname: "",
       password:'',
       email:'',
@@ -201,7 +201,7 @@ import Vue from "vue";
       this.$router.push({name: 'signup'})
     },
     create() {
-      if (!this.name || !this.surname || !this.password || !this.email ||  !this.TENANT_CODE || !this.recaptcha) {
+      if (!this.firstname || !this.surname || !this.password || !this.email ||  !this.TENANT_CODE || !this.recaptcha) {
         this.errors.push("Please fill the required fields");
       } else {
         if (this.password !== this.confirmPassword) {
@@ -214,7 +214,7 @@ import Vue from "vue";
         data = {
          TENANT_CODE : this.TENANT_CODE.toLowerCase(),
           email: this.email,
-          name: this.name,
+          firstname: this.firstname,
           surname: this.surname,
            password: this.password
 

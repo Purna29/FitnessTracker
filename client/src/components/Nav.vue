@@ -4,7 +4,7 @@
       class="navbar"
       role="navigation"
       aria-label="main navigation"
-      v-if="$route.path !== '/home'"
+      v-if="$route.path !== '/home'  && $route.path !== '/profile'  && $route.path !== '/diet' && $route.path !== '/fitness'"
     >
       <div class="navbar-brand">
         <a class="navbar-item" href @click="$router.push({path: '/'})">
@@ -51,7 +51,7 @@
       class="navbar"
       role="navigation"
       aria-label="main navigation"
-      v-if="$route.path === '/home'"
+      v-if="$route.path === '/home' || $route.path === '/profile'  || $route.path == '/diet' || $route.path == '/fitness'"
     >
       <div class="navbar-brand">
         <a class="navbar-item" href @click="$router.push({path: '/'})">
@@ -72,16 +72,16 @@
         </a>
       </div>
 
+      <div class="navbar-item">
+          <a class="button is-primary mr-1" href @click="$router.push({path: '/fitness'})">
+            <strong>Fitness Activities</strong>
+          </a>
+          <a class="button is-warning" href @click="$router.push({path: '/diet'})">
+            <strong>Food Diet</strong>
+          </a>
+       
+      </div>
       <div :class="{ 'is-active':isOpen }" class="navbar-menu">
-        <div class="navbar-start">
-          <!-- 
-
-      <router-link to="/" class="navbar-item" active-class="is-current" exact>Home</router-link>
-      <router-link to="/about" class="navbar-item" active-class="is-current">About Us</router-link>
-      <router-link to="/whyjoin" class="navbar-item" active-class="is-current">Why join?  </router-link>
-          <router-link to="/contact" class="navbar-item" active-class="is-current">Contact Us</router-link>-->
-        </div>
-
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="dropdown">
@@ -92,14 +92,17 @@
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-              >Paul Adams <div class="image-cover mx-2">
-                <img src="/img/user.jpg" />
-              </div></button>
+              >
+              {{firstname}} {{lastname}}
+                <div class="image-cover mx-2">
+                  <img :src="dp" />
+              </div>
+              </button>
               
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Logout</a>
-
+                <a class="dropdown-item" href @click="$router.push({path: '/profile'})">Profile</a>
+                <a class="dropdown-item" href="#">Dashboard</a>
+                <a class="dropdown-item" href @click="logout">Logout</a>
               </div>
             </div>
           </div>
@@ -112,8 +115,32 @@
 <script>
 export default {
   data: () => ({
-    isOpen: false
-  })
+    isOpen: false,
+    firstname:'',
+    lastname:'',
+    age:'',
+    weight:'',
+    height:'',
+    sex:'',
+    dp:''
+  }),
+ mounted() {
+      var userData = localStorage.getItem('user')
+      var userObj = JSON.parse(userData)
+      this.firstname = userObj.firstname
+      this.lastname = userObj.lastname
+      this.age = userObj.age
+      this.weight = userObj.weight
+      this.height = userObj.height
+      this.sex = userObj.sex
+      this.dp = userObj.img
+  },
+  methods: {
+    logout() {
+      localStorage.clear()
+      this.$router.push({path: '/'})
+    }
+  }
 };
 </script>
 

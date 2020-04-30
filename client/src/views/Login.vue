@@ -15,7 +15,7 @@
                   </div>
                   <form class="user text-center">
                     <div class="alert alert-danger mx-0" role="alert" v-if="errors.length">
-                      <strong>{{ errors[0] }}</strong>
+                      <strong>{{ errors }}</strong>
                     </div>
                     <div class="form-group">
                       <input
@@ -23,7 +23,7 @@
                         class="form-control form-control-user"
                         id="exampleInputEmail"
                         aria-describedby="emailHelp"
-                        v-model="apiKey"
+                        v-model="email"
                         placeholder="Enter Email Address..."
                       />
                     </div>
@@ -31,7 +31,7 @@
                       <input
                         type="password"
                         class="form-control form-control-user"
-                        v-model="apiSecrete"
+                        v-model="password"
                         id="exampleInputPassword"
                         placeholder="Password"
                       />
@@ -44,11 +44,12 @@
                     </div>-->
                     <a
                       href="#"
-                      @click.prevent="$router.push({path: '/home'})"
+                      @click.prevent="login"
                       class="button is-black"
                     >Login</a>
                   </form>
                   <hr />
+
                   <div class="text-center">
                     <a class="small text-light" @click="forgot" href="#">Forgot Password?</a>
                   </div>
@@ -112,11 +113,14 @@ import Vue from "vue";
 export default {
   data() {
     return {
-      errors: [],
+
       config: "",
       apiKey: "",
       apiSecrete: "",
-      loader: false
+      loader: false,
+      email:'',
+      password:'',
+      errors:""
     };
   },
 
