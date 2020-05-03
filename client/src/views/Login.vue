@@ -54,7 +54,7 @@
                     <a class="small text-light" @click="forgot" href="#">Forgot Password?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small text-light" @click="signup" href="#">Create an Account!</a>
+                    <a class="small text-light" @click="signup" href="signup">Create an Account!</a>
                   </div>
                 </div>
               </div>
@@ -137,7 +137,28 @@ export default {
     signup() {
       this.$router.push({ name: "signup" });
     },
-    login() {}
+    login() {
+     if(!this.email || !this.password) {
+        this.errors = "Please enter credentials"
+      } else {
+
+      
+      var data = {
+        email: this.email,
+        password:this.password
+      }
+      var self = this
+      Vue.axios.post("/users/signin", data)
+      .then((response) => {
+        window.location = '/home'
+        localStorage.setItem("user", JSON.stringify(response.data))
+        console.log(response.data)
+        }).catch((err)=> {
+        self.errors = err.response.data.message
+       
+})
+    }
+  } 
   }
 };
 </script>
