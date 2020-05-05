@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    </style>
+  <body>
+    <h1><%= title %></h1>
+    <p> <%= message %></p>
+    <p> <%= records %></p>
+    
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Height</th> 
+    <th>Weight</th>
+  </tr>
+  <% records.forEach(function(row){%>
+  <tr>
+    <th><%=row.name %></th>
+    <th><%=row.height %></th> 
+    <th><%=row.weight %></th>
+  </tr>
+  <%} )%>
+
+</table>
+  </body>
+</html>
