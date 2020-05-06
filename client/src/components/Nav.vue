@@ -4,7 +4,7 @@
       class="navbar"
       role="navigation"
       aria-label="main navigation"
-      v-if="$route.path !== '/home'  && $route.path !== '/profile'  && $route.path !== '/diet' && $route.path !== '/fitness'"
+      v-if="$route.path !== '/home'  && $route.path !== '/profile'  && $route.path !== '/diet' && $route.path !== '/fitness' && $route.path !== '/dashboard'"
     >
       <div class="navbar-brand">
         <a class="navbar-item" href @click="$router.push({path: '/'})">
@@ -51,10 +51,10 @@
       class="navbar"
       role="navigation"
       aria-label="main navigation"
-      v-if="$route.path === '/home' || $route.path === '/profile'  || $route.path == '/diet' || $route.path == '/fitness'"
+      v-if="$route.path === '/home' || $route.path === '/profile'  || $route.path == '/diet' || $route.path == '/fitness' || $route.path == '/home' || $route.path == '/dashboard'"
     >
       <div class="navbar-brand">
-        <a class="navbar-item" href @click="$router.push({path: '/'})">
+        <a class="navbar-item" href @click="$router.push({path: '/home'})">
           <img src="/img/logo.png" />
         </a>
 
@@ -73,6 +73,9 @@
       </div>
 
       <div class="navbar-item">
+          <a class="button is-info is-light mr-1" href @click="$router.push({path: '/dashboard'})">
+            <strong>Dashboard</strong>
+          </a>
           <a class="button is-primary mr-1" href @click="$router.push({path: '/fitness'})">
             <strong>Fitness Activities</strong>
           </a>
@@ -101,7 +104,7 @@
               
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href @click="$router.push({path: '/profile'})">Profile</a>
-                <a class="dropdown-item" href="#">Dashboard</a>
+                <a class="dropdown-item" href @click="$router.push({path: '/Dashboard'})">Dashboard</a>
                 <a class="dropdown-item" href @click="logout">Logout</a>
               </div>
             </div>

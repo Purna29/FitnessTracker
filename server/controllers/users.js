@@ -11,5 +11,13 @@ router
             res.status(401).send({ message: error.message });
         }
     })
-
+    .post('/dataupdate', (req, res) => {
+        try {
+            const user = users.update(req.body);
+            res.send({ ...user, password: undefined });
+        } catch (error) {
+            res.status(401).send({ message: error.message });
+        }
+    })
+    
 module.exports = router;

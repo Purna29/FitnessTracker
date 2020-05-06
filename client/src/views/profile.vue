@@ -2,6 +2,9 @@
   <div class="wrapper">
     <h1 class="h3 text-dark mb-4 text-center pt-2">Profile</h1>
     <div class="pt-4">
+      <div class="notification is-primary is-light text-center" v-if="msg">
+        <b>{{msg}}</b>
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-6">
@@ -35,7 +38,7 @@
 <div class="field">
   <label class="label">Mobile No</label>
   <div class="control ">
-    <input class="input " v-model="no" type="tel" placeholder="Enter Phone no" >
+    <input class="input " v-model="no" type="tel" placeholder="Enter Mobile No:" >
 
   </div>
   
@@ -44,7 +47,7 @@
   <label class="label">Sex</label>
   <div class="control">
     <div class="select">
-      <select>
+      <select v-model="sex">
         <option>Male</option>
         <option>Female</option>
       </select>
@@ -61,9 +64,9 @@
  
 </div>
 <div class="field">
-  <label class="label">Wieght</label>
+  <label class="label">Weight</label>
   <div class="control ">
-    <input class="input " type="text" v-model="weight" placeholder="Wieght">
+    <input class="input " type="text" v-model="weight" placeholder="Weight">
   
   
   </div>
@@ -82,7 +85,7 @@
 </div>
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link">Save Changes </button>
+    <button class="button is-link" @click="save">Save Changes </button>
   </div>
   <div class="control">
     <button class="button is-warning ">Return to Dashboard</button>
@@ -139,6 +142,7 @@ width: 53%;
 }
 </style>
 <script>
+import Vue from "vue";
 import {
   VueFlux,
   FluxCaption,
@@ -149,7 +153,8 @@ import {
 } from "vue-flux";
 export default {
   data: () => ({
-           firstname:'',
+    msg: "",
+    firstname:'',
     lastname:'',
     age:'',
     weight:'',
@@ -158,6 +163,7 @@ export default {
     dp:'',
     email:'',
     no:"",
+    id: "",
     fluxOptions: {
       autoplay: true,
 
@@ -175,16 +181,44 @@ export default {
   },
   mounted() {
         var userData = localStorage.getItem('user')
-      var userObj = JSON.parse(userData)
-      this.firstname = userObj.firstname
-      this.lastname = userObj.lastname
-      this.age = userObj.age
-      this.weight = userObj.weight
-      this.height = userObj.height
-      this.sex = userObj.sex
-      this.dp = userObj.img
-      this.email= userObj.email
-       this.no= userObj.no
+      var userObj = JSON.parse(userData);
+      this.firstname = userObj.firstname;
+      this.lastname = userObj.lastname;
+      this.age = userObj.age;
+      this.weight = userObj.weight;
+      this.height = userObj.height;
+      this.sex = userObj.sex;
+      this.dp = userObj.img;
+      this.email= userObj.email;
+       this.no= userObj.no;
+       this.id = userObj.Id;
+  },
+methods: {
+    save() {
+      var data = {
+        firstname: this.firstname,
+        lastname: this.lastname,
+        age: this.age,
+        weight: this.weight,
+        height: this.height,
+        sex: this.sex,
+        email: this.email,
+        no: this.no,
+        id: this.id
+      };
+      var self = this;
+      Vue.axios
+        .post("/users/dataupdate", data)
+        .then(response => {
+          localStorage.setItem("user", JSON.stringify(response.data));
+          self.msg = "Changes have been made";
+          window.scrollTo(0, 0);
+          window.location = self.$route.path;
+        })
+        .catch(err => {
+          self.errors = err.response.data.message;
+        });
+    }
   }
 };
 </script>

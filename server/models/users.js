@@ -11,5 +11,21 @@ const Users = [
       if (user.password != password) throw Error("Password enter is incorrect");
       return user;
     },
+    update(data) {
+      const user = Users.find((user) => user.Id == data.id);
+      if (!user) throw Error("User not found");
+      if(user) {
+        user.firstname = data.firstname
+        user.lastname = data.lastname
+        user.age = data.age
+        user.no = data.no
+        user.sex = data.sex
+        user.email = data.email
+        user.height = data.height
+        user.weight = data.weight
+      }
+      return user;
+    },
+
   };
   
