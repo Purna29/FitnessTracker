@@ -22,11 +22,11 @@
                 <div class="content">
                   {{item.des}}
                   <social-sharing
-                    url="https://thumbs.dreamstime.com/z/aerobics-elliptical-walker-trainer-group-gym-fitness-workout-40979084.jpg"
-                    title="TreadMill 45Mins"
+                    :url="item.img"
+                    :title="item.duration"
                     description="For warm up adn callorie burn"
-                    quote="One of the best exercise to burn body fats"
-                    hashtags="treadmill,ftiness"
+                    :quote="item.des"
+                    :hashtags="item.duration"
                     twitter-user="vuejs"
                     inline-template
                   >

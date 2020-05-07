@@ -16,59 +16,61 @@ const exerciseTypes = [
   ];
   const exerciseLogs = [
     {
-      id: 1,
-      user: 1,
-      exercise: "Flat Barbell Bench Press",
-      weight: 40,
-      reps: 15,
-      sets: [
-        {
-          set: 1,
-          reps: 15,
-          weight: "40 kg",
+      exercise: "Inchworm",
+ 
+      reps: 12,
+      cal: 15,
+      result:1200
   
-        },
-        {
-          set: 2,
-          reps: 10,
-          weight: "35 kg",
-        },
-        {
-          set: 3,
-          reps: 8,
-          weight: "30 kg",
-        },
-      ],
-      calories_burned: 50,
-      description: "Chest buildup ",
     },
     {
-      id: 2,
-      user: 1,
-      exercise: "Shoulder Press",
-      weight: 120,
-      reps: 20,
-      sets: [
-        {
-          set: 1,
-          reps: 20,
-          weight: "80 kg",
-        },
-        {
-          set: 2,
-          reps: 15,
-          weight: "100 kg",
-        },
-        {
-          set: 3,
-          reps: 12,
-          weight: "120 kg",
-        },
-      ],
-      calories_burned: 90,
-      description: "Shoulder in shape ",
+   
+    
+      exercise: "Bear crawl",
+      cal: 18,
+      reps: 13,
+      result:1000
+    
     },
-  ];
+    {
+   
+    
+      exercise: "Side plank",
+      cal: 12,
+      reps: 11,
+      result:1100
+    
+    },
+    {
+   
+    
+      exercise: "dumbbell bench-press",
+      cal: 23,
+      reps: 20,
+      result:1300
+    
+    },
+    {
+   
+    
+      exercise: "Crunch",
+      cal: 19,
+      reps: 11,
+      result:1400
+    
+    },
+    {
+   
+    
+      exercise: "Standard push-up",
+      cal: 18,
+      reps: 11,
+      result:1200
+    
+    },
+  ]; 
+    
+      
   
   const getExerciseLogs = () => {
     return exerciseLogs;
@@ -76,31 +78,17 @@ const exerciseTypes = [
   
   const getExerciseTypes = () => {
     return exerciseTypes;
-  };
-  const getExerciseLogDetails = (exercise) => {
-    let index = exerciseLogs.findIndex((obj) => obj.id === exercise);
-    if (index != -1) {
-      return exerciseLogs[index];
-    }
-    return null;
-  };
+  }
   
   const addExerciseLogs = (exercise) => {
     exerciseLogs.push(exercise);
-    return true;
-  };
-  
-  const deleteExerciseLogs = (post) => {
-    exerciseLogs = exerciseLogs.filter((obj) => obj.id === post);
-    return true;
+    return exerciseLogs;
   };
   
   module.exports = {
     getExerciseTypes,
-    exerciseLogs,
     getExerciseLogs,
-    getExerciseLogDetails,
     addExerciseLogs,
-    deleteExerciseLogs,
-  };
+
+ };
   

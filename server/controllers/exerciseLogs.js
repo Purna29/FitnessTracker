@@ -9,14 +9,13 @@ const router = express.Router();
 router
   .get("/all", (req, res) => res.send(exerciseLogs.getExerciseLogs()))
   .get("/types", (req, res) => res.send(exerciseLogs.getExerciseTypes()))
-  .get("/:id", (req, res) =>
-    res.send(exerciseLogs.getExerciseLogDetails(req.params.id))
-  )
-  .post("/save", (req, res) =>
-    res.send(exerciseLogs.addExerciseLogs(req.body.exersise))
-  )
-  .get("/delete", (req, res) =>
-    res.send(exerciseLogs.deleteExerciseLogs(req.params.id))
-  );
+  .post('/calculate', (req, res) => {
+    try {
+        const result = exerciseLogs.addExerciseLogs(req.body);
+        res.send(result);
+    } catch (error) {
+        res.status(401).send({ message: error.message });
+    }
+})
 
 module.exports = router;
