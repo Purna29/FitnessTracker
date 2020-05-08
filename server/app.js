@@ -8,6 +8,7 @@ var usersRouter = require('./controllers/users');
 var exercise = require('./controllers/exercise');
 var food = require('./controllers/food');
 var exerciseLogs = require('./controllers/exerciseLogs');
+
 var app = express();
 
 app.use(function (req, res, next) {

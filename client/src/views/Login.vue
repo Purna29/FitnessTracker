@@ -148,7 +148,8 @@ export default {
         password:this.password
       }
       var self = this
-      Vue.axios.post("/users/signin", data)
+      Vue.axios
+      .post("/users/signin", data)
       .then((response) => {
         window.location = '/home'
         localStorage.setItem("user", JSON.stringify(response.data))
@@ -156,7 +157,7 @@ export default {
         }).catch((err)=> {
         self.errors = err.response.data.message
        
-})
+});
     }
   } 
   }
