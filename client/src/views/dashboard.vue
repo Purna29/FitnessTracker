@@ -6,15 +6,24 @@
          <div class="col-6">
            <div class="field">
   <label class="label">Name</label>
+  <!--
   <div class="control">
     <div class="notification is-primary is-light text-center" v-if="err">
         <b>{{err}}</b>
       </div>
-    <select v-model="excercise" class="w-100 rounder py-2">
+    <select v-model="excercise" id="excercise" class="w-100 rounder py-2" >
        <option disabled value="">Please select excercise</option>
       <option v-for="type in types">{{type.type}}</option>
     </select>
-  </div>
+  </div>-->
+  <b-autocomplete
+    v-model="exerciseTypeInput"
+    :data="filteredTypes"
+    @select="typeSelected"
+
+  />
+
+
 </div>
 
 <div class="field">
@@ -121,6 +130,8 @@
   box-shadow: 1px 5px 11px 7px #8ba8bd;
 }
 </style>
+
+    
 <script>
 import Vue from "vue";
 import {
@@ -132,14 +143,25 @@ import {
   FluxPreloader
 } from "vue-flux";
 export default {
+  computed:{
+    filteredTypes(){
+      if(this.types !== null){
+        
+      return this.types.map(type=> type.type).filter(type=>{
+        return type.toLowerCase().indexOf(this.exerciseTypeInput.toLowerCase()) >= 0
+      })}
+      else return []
+    }
+  },
   data: () => ({
+    exerciseTypeInput: '',
     results:'',
     excercise:"",
     calcualted:'',
     err:'',
     rep:'',
     cal:'',
-    types:'',
+    types:null,
     fitness: {},
     fluxOptions: {
       autoplay: true
@@ -176,6 +198,9 @@ export default {
   },
 
   methods: {
+      typeSelected(selection){
+        this.excercise = selection
+      },
      calculate() {
        if(this.cal && this.excercise && this.rep) {
 
@@ -205,6 +230,7 @@ export default {
     }
   }
 };
+$('#excercise').select2();
 </script>
 
 

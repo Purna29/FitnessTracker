@@ -12,6 +12,10 @@ import Profile from '../views/profile.vue';
 import Food from '../views/Fooddiet.vue';
 import Fitness from '../views/fitness.vue';
 import Dashboard from '../views/dashboard.vue';
+
+
+
+
 import { CurrentUser } from '../models/Users';
 
 Vue.use(VueRouter)
@@ -28,6 +32,7 @@ const routes = [
   { path: '/profile', name: 'Profile', component: Profile },
   { path: '/whyjoin', name: 'Whyjoin', component: Whyjoin },
   { path: '/home', name: 'afterlogin', component: Afterlogin },
+  
 
   
   {

@@ -31,6 +31,8 @@
           <router-link to="/about" class="navbar-item" active-class="is-current">About Us</router-link>
           <router-link to="/whyjoin" class="navbar-item" active-class="is-current">Why join?</router-link>
           <router-link to="/contact" class="navbar-item" active-class="is-current">Contact Us</router-link>
+          
+
         </div>
 
         <div class="navbar-end">
@@ -105,6 +107,7 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href @click="$router.push({path: '/profile'})">Profile</a>
                 <a class="dropdown-item" href @click="$router.push({path: '/Dashboard'})">Dashboard</a>
+            
                 <a class="dropdown-item" href @click="logout">Logout</a>
               </div>
             </div>

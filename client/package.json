@@ -9,9 +9,11 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
     "axios": "^0.19.2",
+    "buefy": "0.8.18",
     "bulma": "^0.8.0",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
+    "vue-async-computed": "^3.8.2",
     "vue-axios": "^2.1.5",
     "vue-flux": "^6.0.2",
     "vue-router": "^3.1.5",
